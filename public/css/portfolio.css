@@ -1,0 +1,107 @@
+/* Portfolio Section Styles */
+#portfolio-section {
+  font-family: Arial, sans-serif;
+  max-width: 1200px; /* Increased max-width for larger screens */
+  margin: 50px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+#portfolio-section h2 {
+  font-size: 32px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  border-bottom: 3px solid #e74c3c;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+#portfolio-section p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted for better responsiveness */
+  gap: 20px;
+  padding: 0 10px; /* Reduced padding for smaller screens */
+}
+
+.portfolio-item {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.portfolio-item h3 {
+  font-size: 20px;
+  color: #333;
+  margin: 15px 0 10px;
+  padding: 0 15px;
+}
+
+.portfolio-item p {
+  font-size: 14px;
+  color: #666;
+  padding: 0 15px 20px;
+  line-height: 1.6;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  #portfolio-section {
+    padding: 20px 10px; /* Reduced padding for smaller screens */
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted for tablets */
+  }
+
+  .portfolio-item h3 {
+    font-size: 18px; /* Slightly smaller font size for tablets */
+  }
+
+  .portfolio-item p {
+    font-size: 13px; /* Slightly smaller font size for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  #portfolio-section h2 {
+    font-size: 28px; /* Smaller font size for mobile */
+  }
+
+  #portfolio-section p {
+    font-size: 14px; /* Smaller font size for mobile */
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr; /* Single column layout for mobile */
+  }
+
+  .portfolio-item h3 {
+    font-size: 16px; /* Smaller font size for mobile */
+  }
+
+  .portfolio-item p {
+    font-size: 12px; /* Smaller font size for mobile */
+  }
+}

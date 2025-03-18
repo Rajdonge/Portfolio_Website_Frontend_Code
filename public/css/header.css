@@ -1,0 +1,162 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Logo */
+.logo {
+  width: 5em;
+  height: 5em;
+}
+
+/* Header Section */
+.header_section {
+  background-color: #ffffff;
+  padding: 20px 0;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space between logo and nav items */
+  position: relative; /* Needed for absolute positioning of nav-links */
+}
+
+/* Logo Container */
+.logo-container {
+  display: flex;
+  align-items: center;
+  z-index: 1001; /* Ensure logo is above other elements */
+}
+
+/* Navigation Menu */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 1.125rem; /* Relative font size (18px) */
+  color: #333;
+  font-weight: 600;
+  padding: 8px 15px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+.nav-links a:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.nav-links a.active {
+  color: blue;
+  border-bottom: 2px solid blue;
+}
+
+/* Menu Icon (Toggle Bar) */
+.menu-icon {
+  display: none; /* Hidden by default */
+  font-size: 1.5rem; /* Relative font size (24px) */
+  cursor: pointer;
+  color: #0b2c63; /* Icon color */
+  padding: 10px; /* Add padding for better click area */
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+/* Close Icon */
+.close-icon {
+  display: none; /* Hidden by default */
+  font-size: 1.5rem; /* Relative font size (24px) */
+  cursor: pointer;
+  color: #333; /* Icon color */
+  padding: 10px; /* Add padding for better click area */
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-icon {
+      display: block; /* Show the menu icon on smaller screens */
+      font-size: 1.25rem; /* Smaller font size (20px) */
+  }
+
+  .nav-links {
+      display: none; /* Hide nav links by default on smaller screens */
+      flex-direction: column;
+      position: absolute;
+      top: 80px; /* Position below the header */
+      left: 20px; /* Align to the right */
+      background-color: #ffffff;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      padding: 10px;
+      width: 180px; /* Reduce dropdown width */
+      max-height: 200px; /* Set a max height for the dropdown */
+      overflow-y: auto; /* Add scroll view */
+  }
+
+  .nav-links.open {
+      display: flex; /* Show nav links when menu is open */
+  }
+
+  .nav-links a {
+      padding: 8px 10px; /* Reduce padding for better spacing */
+      font-size: 1rem; /* Smaller font size (16px) */
+      text-align: center; /* Center-align the text */
+  }
+
+  /* Hide menu icon and show close icon when menu is open */
+  .menu-icon.open {
+      display: none;
+  }
+
+  .close-icon.open {
+      display: block;
+      font-size: 1.25rem; /* Smaller font size (20px) */
+  }
+
+  /* Adjust logo positioning for smaller screens */
+  .logo-container {
+      position: absolute;
+      left: 50px; /* Align logo to the left */
+      top: 50%; /* Center vertically */
+      transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-icon {
+      font-size: 1rem; /* Even smaller font size (16px) for mobile screens */
+  }
+
+  .close-icon.open {
+      font-size: 1rem; /* Even smaller font size (16px) for mobile screens */
+  }
+
+  .nav-links a {
+      font-size: 0.875rem; /* Even smaller font size (14px) for mobile screens */
+  }
+}

@@ -1,0 +1,48 @@
+#about-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#about-section h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #e74c3c;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+#about-section p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+#about-section li {
+    font-size: 18px;
+    color: #333;
+    list-style: none;
+    margin: 10px 0;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+#about-section li:hover {
+    background: #e74c3c;
+    color: #fff;
+    transform: translateX(5px);
+}
+
+#about-section p:last-child {
+    font-weight: bold;
+    color: #e74c3c;
+    font-size: 20px;
+}
