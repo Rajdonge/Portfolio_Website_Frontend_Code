@@ -15,6 +15,8 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import {API_BASE_URL} from '../public/config/constants';
+import defaultLogo from '../public/images/logo.png';
+import defaultBanner from '../public/images/Pic.jpg';
 
 library.add(faLinkedin, faFacebook, faGithub, faBars, faTimes, faEye, faDownload);
 
@@ -73,7 +75,7 @@ export default function Home() {
         const response = await axios.get(`${API_BASE_URL}logo/`);
         if (response.data.logo_url) {
           setLogoUrl(response.data.logo_url);
-        }
+        } 
       } catch (error) {
         console.error('Error fetching logo: ', error);
       }
@@ -191,8 +193,8 @@ export default function Home() {
             {/* Logo Container */}
             <div className="logo-container">
               {logoUrl ? ( // Only render the Image if logoUrl is valid
-                <Image
-                  src={logoUrl}
+                <img
+                  src={logoUrl || '../public/images/logo.png'}
                   alt="logo"
                   className="logo"
                   width={100} // Set appropriate width
@@ -267,7 +269,7 @@ export default function Home() {
             {/* Social Icons */}
             <div className="social-icon">
               <a
-                href={socialMedia?.linkedin}
+                href={socialMedia?.linkedin || 'https://www.linkedin.com/in/rajdonge/'}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -275,7 +277,7 @@ export default function Home() {
                 <FontAwesomeIcon icon={faLinkedin} size="1x" />
               </a>
               <a
-                href={socialMedia?.github}
+                href={socialMedia?.github || 'https://github.com/Rajdonge'}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
@@ -283,7 +285,7 @@ export default function Home() {
                 <FontAwesomeIcon icon={faGithub} size="1x" />
               </a>
               <a
-                href={socialMedia?.facebook}
+                href={socialMedia?.facebook || 'https://www.facebook.com/RajdongeDhimalBibek'}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -324,7 +326,7 @@ export default function Home() {
         <section id="cv-section">
           {cvUrl ? (
             <div className='cv-buttons'>
-              <a href={cvUrl}
+              <a href={cvUrl || '../public/images/Bibek Dhimal_Software Developer.pdf'}
                 target='_blank'
               rel='noopener noreferrer'
               className='cv-link'
